@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 interface Product {
-  specifications: {
-    material: string
-    fit: string
-    care: string
-    origin: string
+  specifications?: {
+    material?: string
+    fit?: string
+    care?: string
+    origin?: string
   }
   features: string[]
   reviews: number
@@ -98,19 +98,19 @@ export function ProductTabs({ product }: ProductTabsProps) {
                 <div className="grid gap-4">
                   <div className="flex justify-between py-2 border-b">
                     <span className="font-medium">Material</span>
-                    <span className="text-muted-foreground">{product.specifications.material}</span>
+                    <span className="text-muted-foreground">{product.specifications?.material || "—"}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b">
                     <span className="font-medium">Fit</span>
-                    <span className="text-muted-foreground">{product.specifications.fit}</span>
+                    <span className="text-muted-foreground">{product.specifications?.fit || "—"}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b">
                     <span className="font-medium">Care Instructions</span>
-                    <span className="text-muted-foreground">{product.specifications.care}</span>
+                    <span className="text-muted-foreground">{product.specifications?.care || "—"}</span>
                   </div>
                   <div className="flex justify-between py-2">
                     <span className="font-medium">Origin</span>
-                    <span className="text-muted-foreground">{product.specifications.origin}</span>
+                    <span className="text-muted-foreground">{product.specifications?.origin || "—"}</span>
                   </div>
                 </div>
               </div>

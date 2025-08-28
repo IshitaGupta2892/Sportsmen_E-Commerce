@@ -8,19 +8,19 @@ export function FeaturedCollections() {
       title: "Running Essentials",
       description: "Lightweight, breathable gear for your daily runs",
       image: "/running-shoes-and-athletic-wear-on-track.png",
-      href: "/category/running",
+      href: "/search?q=running",
     },
     {
       title: "Gym Performance",
       description: "Strength training apparel built for intense workouts",
       image: "/gym-equipment-weights-athletic-clothing.png",
-      href: "/category/gym",
+      href: "/search?q=gym",
     },
     {
       title: "Outdoor Adventure",
       description: "Weather-resistant gear for outdoor activities",
       image: "/outdoor-hiking-athletic-gear-mountains.png",
-      href: "/category/outdoor",
+      href: "/search?q=outdoor",
     },
   ]
 
