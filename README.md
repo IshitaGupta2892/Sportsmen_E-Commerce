@@ -1,2 +1,19 @@
-# Sportsmen_E-Commerce
-A modern, responsive Sportswear e-commerce website UI built with a clean and minimal layout. It features product listings, detail pages, search and filter options, cart and checkout flows. Designed with NextJs and Taliwand CSS, it highlights a sports-inspired theme with reusable, scalable components.
+🏋️‍♂️ Sportswear Website UI
+
+A modern, responsive Sportswear e-commerce website UI designed with a clean and minimal layout. The interface focuses on showcasing athletic wear, accessories, and footwear in a visually appealing and user-friendly way.
+
+✨ Features
+
+🖥️ Responsive design (mobile, tablet, desktop)
+🎨 Modern sports-inspired theme
+🛒 Product listing & detail pages
+🔍 Search & filter options for products
+🧾 Cart and checkout page designs
+⚡ Built with clean, reusable components
+
+
+🛠️ Tech Stack
+
+Taliwand CSS, NextJS
+Responsive Grid & Flexbox layouts
+Iconography & typography optimized for sports branding
