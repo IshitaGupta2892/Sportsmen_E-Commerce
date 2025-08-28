@@ -23,6 +23,6 @@ A modern, responsive **Sportswear e-commerce website UI** designed with a clean 
 
 ## 🚀 Getting Started  
 
-Clone the repository:  
+Website Link:
 ```bash
-https://sportsmen-e-commerce.vercel.app/product/5
+https://sportsmen-e-commerce.vercel.app
