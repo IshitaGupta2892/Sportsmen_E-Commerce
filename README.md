@@ -15,7 +15,7 @@ A modern, responsive **Sportswear e-commerce website UI** designed with a clean 
 ---
 
 ## 🛠️ Tech Stack  
-- **Taliwand CSS, NextJS** (or React/Tailwind if used)  
+- **Taliwand CSS, NextJS**  
 - **Responsive Grid & Flexbox layouts**  
 - **Iconography & typography** optimized for sports branding  
 
