@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Search, Menu, ShoppingCart, User } from "lucide-react"
+import { Search, Menu, User } from "lucide-react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,7 +31,7 @@ export function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="h-8 w-8 rounded-full bg-primary"></div>
-          <span className="font-serif text-xl font-bold text-foreground">AthleteZone</span>
+          <span className="font-serif text-xl font-bold text-foreground">One-7</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -60,9 +60,6 @@ export function Navigation() {
           </form>
           <Button variant="ghost" size="icon">
             <User className="h-5 w-5" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <ShoppingCart className="h-5 w-5" />
           </Button>
         </div>
 
@@ -100,10 +97,6 @@ export function Navigation() {
                 <Button variant="outline" className="flex-1 bg-transparent">
                   <User className="h-4 w-4 mr-2" />
                   Account
-                </Button>
-                <Button variant="outline" className="flex-1 bg-transparent">
-                  <ShoppingCart className="h-4 w-4 mr-2" />
-                  Cart
                 </Button>
               </div>
             </div>

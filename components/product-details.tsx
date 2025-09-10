@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Star, Heart, Share2, ShoppingCart, Minus, Plus, Truck, Shield, RotateCcw } from "lucide-react"
+import { Star, Share2, Truck, Shield, RotateCcw } from "lucide-react"
 
 interface Product {
   id: number
@@ -19,8 +19,6 @@ interface Product {
   onSale: boolean
   description: string
   features: string[]
-  inStock: boolean
-  stockCount: number
 }
 
 interface ProductDetailsProps {
@@ -30,20 +28,7 @@ interface ProductDetailsProps {
 export function ProductDetails({ product }: ProductDetailsProps) {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [selectedSize, setSelectedSize] = useState("")
-  const [quantity, setQuantity] = useState(1)
-  const [isFavorite, setIsFavorite] = useState(false)
 
-  const increaseQuantity = () => {
-    if (quantity < product.stockCount) {
-      setQuantity(quantity + 1)
-    }
-  }
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1)
-    }
-  }
 
   const discountPercentage = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -75,10 +60,10 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
       {/* Price */}
       <div className="flex items-center gap-3">
-        <span className="text-3xl font-bold">${product.price}</span>
+        <span className="text-3xl font-bold">₹{product.price}</span>
         {product.originalPrice && (
           <>
-            <span className="text-lg text-muted-foreground line-through">${product.originalPrice}</span>
+            <span className="text-lg text-muted-foreground line-through">₹{product.originalPrice}</span>
             <Badge variant="destructive">{discountPercentage}% OFF</Badge>
           </>
         )}
@@ -127,46 +112,13 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         </div>
       </div>
 
-      {/* Quantity */}
-      <div>
-        <h3 className="font-medium mb-3">Quantity</h3>
-        <div className="flex items-center gap-3">
-          <div className="flex items-center border rounded-md">
-            <Button variant="ghost" size="icon" onClick={decreaseQuantity} disabled={quantity <= 1}>
-              <Minus className="h-4 w-4" />
-            </Button>
-            <span className="px-4 py-2 font-medium">{quantity}</span>
-            <Button variant="ghost" size="icon" onClick={increaseQuantity} disabled={quantity >= product.stockCount}>
-              <Plus className="h-4 w-4" />
-            </Button>
-          </div>
-          <span className="text-sm text-muted-foreground">{product.stockCount} items available</span>
-        </div>
-      </div>
 
-      <Separator />
-
-      {/* Action Buttons */}
+      {/* Share Button */}
       <div className="space-y-3">
-        <Button size="lg" className="w-full" disabled={!selectedSize || !product.inStock}>
-          <ShoppingCart className="mr-2 h-4 w-4" />
-          Add to Cart - ${(product.price * quantity).toFixed(2)}
+        <Button variant="outline" size="lg" className="w-full">
+          <Share2 className="mr-2 h-4 w-4" />
+          Share Product
         </Button>
-
-        <div className="flex gap-2">
-          <Button
-            variant="outline"
-            size="lg"
-            className="flex-1 bg-transparent"
-            onClick={() => setIsFavorite(!isFavorite)}
-          >
-            <Heart className={`mr-2 h-4 w-4 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
-            {isFavorite ? "Favorited" : "Add to Favorites"}
-          </Button>
-          <Button variant="outline" size="lg">
-            <Share2 className="h-4 w-4" />
-          </Button>
-        </div>
       </div>
 
       {/* Features */}
@@ -184,21 +136,6 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
       <Separator />
 
-      {/* Shipping Info */}
-      <div className="space-y-3">
-        <div className="flex items-center gap-3 text-sm">
-          <Truck className="h-4 w-4 text-primary" />
-          <span>Free shipping on orders over $75</span>
-        </div>
-        <div className="flex items-center gap-3 text-sm">
-          <RotateCcw className="h-4 w-4 text-primary" />
-          <span>30-day return policy</span>
-        </div>
-        <div className="flex items-center gap-3 text-sm">
-          <Shield className="h-4 w-4 text-primary" />
-          <span>2-year warranty included</span>
-        </div>
-      </div>
     </div>
   )
 }

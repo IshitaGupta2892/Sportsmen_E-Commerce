@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Star, Heart } from "lucide-react"
+import { Star } from "lucide-react"
 import Link from "next/link"
 
 interface Product {
@@ -30,11 +30,6 @@ interface ProductGridProps {
 
 export function ProductGrid({ products }: ProductGridProps) {
   const [sortBy, setSortBy] = useState("featured")
-  const [favorites, setFavorites] = useState<number[]>([])
-
-  const toggleFavorite = (productId: number) => {
-    setFavorites((prev) => (prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]))
-  }
 
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
@@ -90,19 +85,6 @@ export function ProductGrid({ products }: ProductGridProps) {
                 <Badge className="absolute top-2 left-2 bg-destructive text-destructive-foreground">Sale</Badge>
               )}
 
-              {/* Favorite Button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-2 right-2 bg-white/80 hover:bg-white"
-                onClick={() => toggleFavorite(product.id)}
-              >
-                <Heart
-                  className={`h-4 w-4 ${
-                    favorites.includes(product.id) ? "fill-red-500 text-red-500" : "text-gray-600"
-                  }`}
-                />
-              </Button>
             </div>
 
             <CardContent className="p-4">
@@ -129,9 +111,9 @@ export function ProductGrid({ products }: ProductGridProps) {
 
                 {/* Price */}
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-lg">${product.price}</span>
+                  <span className="font-bold text-lg">₹{product.price}</span>
                   {product.originalPrice && (
-                    <span className="text-sm text-muted-foreground line-through">${product.originalPrice}</span>
+                    <span className="text-sm text-muted-foreground line-through">₹{product.originalPrice}</span>
                   )}
                 </div>
 
