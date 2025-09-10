@@ -50,7 +50,7 @@ export function SearchFilters({ filters, onFiltersChange, allProducts }: SearchF
       brands: [],
       colors: [],
       sizes: [],
-      priceRange: [0, 200],
+      priceRange: [0, 12000],
       onSale: false,
       rating: 0,
     })
@@ -64,7 +64,7 @@ export function SearchFilters({ filters, onFiltersChange, allProducts }: SearchF
       filters.sizes.length +
       (filters.onSale ? 1 : 0) +
       (filters.rating > 0 ? 1 : 0) +
-      (filters.priceRange[0] > 0 || filters.priceRange[1] < 200 ? 1 : 0)
+      (filters.priceRange[0] > 0 || filters.priceRange[1] < 12000 ? 1 : 0)
     )
   }
 
@@ -101,7 +101,7 @@ export function SearchFilters({ filters, onFiltersChange, allProducts }: SearchF
         updateFilters("rating", 0)
         break
       case "price":
-        updateFilters("priceRange", [0, 200])
+        updateFilters("priceRange", [0, 12000])
         break
     }
   }
@@ -157,9 +157,9 @@ export function SearchFilters({ filters, onFiltersChange, allProducts }: SearchF
                   <X className="h-3 w-3 cursor-pointer" onClick={() => removeFilter("rating")} />
                 </Badge>
               )}
-              {(filters.priceRange[0] > 0 || filters.priceRange[1] < 200) && (
+              {(filters.priceRange[0] > 0 || filters.priceRange[1] < 12000) && (
                 <Badge variant="secondary" className="gap-1">
-                  ${filters.priceRange[0]} - ${filters.priceRange[1]}
+                  ₹{filters.priceRange[0]} - ₹{filters.priceRange[1]}
                   <X className="h-3 w-3 cursor-pointer" onClick={() => removeFilter("price")} />
                 </Badge>
               )}
@@ -180,13 +180,13 @@ export function SearchFilters({ filters, onFiltersChange, allProducts }: SearchF
             <Slider
               value={filters.priceRange}
               onValueChange={(value) => updateFilters("priceRange", value as [number, number])}
-              max={200}
+              max={12000}
               step={5}
               className="mb-2"
             />
             <div className="flex justify-between text-sm text-muted-foreground">
-              <span>${filters.priceRange[0]}</span>
-              <span>${filters.priceRange[1]}</span>
+              <span>₹{filters.priceRange[0]}</span>
+              <span>₹{filters.priceRange[1]}</span>
             </div>
           </div>
 

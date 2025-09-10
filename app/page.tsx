@@ -16,9 +16,9 @@ export default function HomePage() {
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="h-6 w-6 rounded-full bg-primary"></div>
-            <span className="font-serif text-lg font-bold">AthleteZone</span>
+            <span className="font-serif text-lg font-bold">One-7</span>
           </div>
-          <p className="text-muted-foreground">© 2024 AthleteZone. Premium sportswear for peak performance.</p>
+          <p className="text-muted-foreground">© 2024 One-7. Premium sportswear for peak performance.</p>
         </div>
       </footer>
     </div>

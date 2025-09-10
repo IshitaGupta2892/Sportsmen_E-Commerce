@@ -177,11 +177,6 @@ export function ProductTabs({ product }: ProductTabsProps) {
                           <div>
                             <div className="flex items-center gap-2">
                               <span className="font-medium">{review.author}</span>
-                              {review.verified && (
-                                <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                                  Verified Purchase
-                                </span>
-                              )}
                             </div>
                             <div className="flex items-center gap-2 mt-1">
                               <div className="flex">

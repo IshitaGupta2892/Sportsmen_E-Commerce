@@ -37,7 +37,7 @@ export default function SearchPage() {
     brands: [] as string[],
     colors: [] as string[],
     sizes: [] as string[],
-    priceRange: [0, 200] as [number, number],
+    priceRange: [0, 12000] as [number, number],
     onSale: false,
     rating: 0,
   })

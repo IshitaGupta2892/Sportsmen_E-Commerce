@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "AthleteZone - Premium Sportswear",
+  title: "One-7 - Premium Sportswear",
   description: "Discover premium sportswear for peak performance and style",
   generator: "v0.app",
 }

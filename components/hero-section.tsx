@@ -24,19 +24,7 @@ export function HeroSection() {
           Discover premium sportswear designed for peak performance. From professional athletes to weekend warriors,
           gear up with confidence.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="text-lg px-8 py-6">
-            Shop Now
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-foreground"
-          >
-            View Collections
-          </Button>
-        </div>
+        
       </div>
     </section>
   )

@@ -9,14 +9,14 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
 export function CategoryFilters() {
-  const [priceRange, setPriceRange] = useState([0, 200])
+  const [priceRange, setPriceRange] = useState([0, 12000])
   const [selectedBrands, setSelectedBrands] = useState<string[]>([])
   const [selectedSizes, setSelectedSizes] = useState<string[]>([])
   const [selectedColors, setSelectedColors] = useState<string[]>([])
   const [onSale, setOnSale] = useState(false)
   const [minRating, setMinRating] = useState(0)
 
-  const brands = ["AthleteZone", "Nike", "Adidas", "Under Armour", "Puma"]
+  const brands = ["One-7", "Nike", "Adidas", "Under Armour", "Puma"]
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"]
   const colors = ["Black", "White", "Gray", "Navy", "Red", "Blue", "Green"]
 
@@ -45,7 +45,7 @@ export function CategoryFilters() {
   }
 
   const clearFilters = () => {
-    setPriceRange([0, 200])
+    setPriceRange([0, 12000])
     setSelectedBrands([])
     setSelectedSizes([])
     setSelectedColors([])
@@ -60,7 +60,7 @@ export function CategoryFilters() {
       selectedColors.length +
       (onSale ? 1 : 0) +
       (minRating > 0 ? 1 : 0) +
-      (priceRange[0] > 0 || priceRange[1] < 200 ? 1 : 0)
+      (priceRange[0] > 0 || priceRange[1] < 12000 ? 1 : 0)
     )
   }
 
@@ -113,10 +113,10 @@ export function CategoryFilters() {
         {/* Price Range */}
         <div>
           <Label className="text-sm font-medium mb-3 block">Price Range</Label>
-          <Slider value={priceRange} onValueChange={setPriceRange} max={200} step={5} className="mb-2" />
+          <Slider value={priceRange} onValueChange={setPriceRange} max={12000} step={500} className="mb-2" />
           <div className="flex justify-between text-sm text-muted-foreground">
-            <span>${priceRange[0]}</span>
-            <span>${priceRange[1]}</span>
+            <span>₹{priceRange[0]}</span>
+            <span>₹{priceRange[1]}</span>
           </div>
         </div>
 
