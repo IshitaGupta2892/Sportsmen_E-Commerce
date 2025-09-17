@@ -4,76 +4,78 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens for sportswear brand */
+  /* Sporty palette: primary blue, secondary/accent orange */
   --background: oklch(1 0 0);
   --foreground: oklch(0.35 0.01 258.34);
-  --card: oklch(0.96 0.01 258.34);
+  --card: oklch(0.98 0.01 258.34);
   --card-foreground: oklch(0.35 0.01 258.34);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.35 0.01 258.34);
-  --primary: oklch(0.45 0.15 162.4);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.55 0.12 162.4);
-  --secondary-foreground: oklch(1 0 0);
+  /* Blue (approx L=0.55, C=0.24, h=264) */
+  --primary: oklch(0.55 0.24 264);
+  --primary-foreground: oklch(0.985 0 0);
+  /* Orange (approx L=0.7, C=0.18, h=35) */
+  --secondary: oklch(0.7 0.18 35);
+  --secondary-foreground: oklch(0.145 0 0);
   --muted: oklch(0.96 0.01 258.34);
-  --muted-foreground: oklch(0.35 0.01 258.34);
-  --accent: oklch(0.55 0.12 162.4);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.55 0.18 27.33);
-  --destructive-foreground: oklch(1 0 0);
+  --muted-foreground: oklch(0.42 0.02 258.34);
+  --accent: oklch(0.7 0.18 35);
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.62 0.22 27.33);
+  --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.01 258.34);
   --input: oklch(0.96 0.01 258.34);
-  --ring: oklch(0.45 0.15 162.4 / 0.5);
-  --chart-1: oklch(0.45 0.15 162.4);
-  --chart-2: oklch(0.55 0.12 162.4);
-  --chart-3: oklch(0.55 0.18 27.33);
-  --chart-4: oklch(0.6 0.16 35.67);
-  --chart-5: oklch(0.48 0.14 142.5);
-  --radius: 0.5rem;
+  --ring: oklch(0.55 0.24 264 / 0.5);
+  --chart-1: var(--primary);
+  --chart-2: oklch(0.62 0.2 250);
+  --chart-3: var(--accent);
+  --chart-4: oklch(0.72 0.15 20);
+  --chart-5: oklch(0.6 0.16 280);
+  --radius: 0.75rem;
   --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.35 0.01 258.34);
-  --sidebar-primary: oklch(0.45 0.15 162.4);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.55 0.12 162.4);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.92 0.01 258.34);
-  --sidebar-ring: oklch(0.45 0.15 162.4 / 0.5);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 .dark {
-  /* Updated dark mode tokens for sportswear brand */
-  --background: oklch(0.145 0 0);
+  /* Dark mode with blue/orange emphasis */
+  --background: oklch(0.15 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
+  --card: oklch(0.15 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
+  --popover: oklch(0.15 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.55 0.12 162.4);
+  --primary: oklch(0.62 0.24 264);
   --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.55 0.12 162.4);
+  --secondary: oklch(0.62 0.2 35);
+  --secondary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.27 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.62 0.2 35);
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.55 0.18 27.33);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.55 0.12 162.4 / 0.5);
-  --chart-1: oklch(0.55 0.12 162.4);
-  --chart-2: oklch(0.6 0.16 35.67);
-  --chart-3: oklch(0.48 0.14 142.5);
-  --chart-4: oklch(0.55 0.18 27.33);
-  --chart-5: oklch(0.45 0.15 162.4);
+  --border: oklch(0.27 0 0);
+  --input: oklch(0.27 0 0);
+  --ring: oklch(0.62 0.24 264 / 0.5);
+  --chart-1: var(--primary);
+  --chart-2: oklch(0.72 0.15 20);
+  --chart-3: var(--accent);
+  --chart-4: oklch(0.6 0.16 280);
+  --chart-5: oklch(0.55 0.16 300);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.55 0.12 162.4);
+  --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent: var(--accent);
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.55 0.12 162.4 / 0.5);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 @theme inline {

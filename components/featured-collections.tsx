@@ -5,22 +5,22 @@ import Link from "next/link"
 export function FeaturedCollections() {
   const collections = [
     {
-      title: "Running Essentials",
-      description: "Lightweight, breathable gear for your daily runs",
-      image: "/running-shoes-and-athletic-wear-on-track.png",
-      href: "/search?q=running",
+      title: "Cricket T-Shirts",
+      description: "Breathable match and training tees for all formats",
+      image: "/mens-athletic-sportswear-clothing.png",
+      href: "/search?q=shirt",
     },
     {
-      title: "Gym Performance",
-      description: "Strength training apparel built for intense workouts",
-      image: "/gym-equipment-weights-athletic-clothing.png",
-      href: "/search?q=gym",
+      title: "Cricket Lowers & Shorts",
+      description: "Stretchy, quick-dry lowers and shorts for the crease",
+      image: "/womens-athletic-sportswear-clothing.png",
+      href: "/search?q=pants%20shorts",
     },
     {
-      title: "Outdoor Adventure",
-      description: "Weather-resistant gear for outdoor activities",
-      image: "/outdoor-hiking-athletic-gear-mountains.png",
-      href: "/search?q=outdoor",
+      title: "Caps & Full Sleeves",
+      description: "Caps for sun, full-sleeve tees for warm-ups — all cricket-ready",
+      image: "/discounted-athletic-wear-sale-items.png",
+      href: "/search?q=cap%20full%20sleeve",
     },
   ]
 
@@ -30,7 +30,7 @@ export function FeaturedCollections() {
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-balance">Featured Collections</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
-            Explore our curated collections designed for every sport and activity
+            Explore curated cricket sportswear collections designed for performance and comfort
           </p>
         </div>
 

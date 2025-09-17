@@ -1,13 +1,14 @@
 "use client"
 
 import type React from "react"
+import Image from "next/image"
 
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Search, Menu, User } from "lucide-react"
 
 export function Navigation() {
@@ -15,7 +16,7 @@ export function Navigation() {
   const [searchQuery, setSearchQuery] = useState("")
   const router = useRouter()
 
-  const categories = ["Men", "Women", "Kids", "Shoes", "Accessories", "Sale"]
+  const categories = ["T-Shirts", "Lowers", "Caps", "Shorts", "Full Sleeves", "Tracksuits"]
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,82 +27,102 @@ export function Navigation() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-primary/90 backdrop-blur supports-[backdrop-filter]:bg-primary/80">
       <div className="container flex h-16 items-center justify-between px-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-full bg-primary"></div>
-          <span className="font-serif text-xl font-bold text-foreground">One-7</span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {categories.map((category) => (
-            <Link
-              key={category}
-              href={`/category/${category.toLowerCase()}`}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-            >
-              {category}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Search Bar */}
-        <div className="hidden md:flex items-center space-x-4">
-          <form onSubmit={handleSearch} className="relative">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              placeholder="Search products..."
-              className="w-64 pl-10"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+        {/* Logo and Desktop Navigation */}
+        <div className="flex items-center space-x-8">
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/logo.jpg"
+              alt="SportsMen Logo"
+              width={40}
+              height={40}
+              className=""
             />
-          </form>
-          <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
-          </Button>
+            
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-6">
+            {categories.map((category) => (
+              <Link
+                key={category}
+                href={`/search?category=${encodeURIComponent(category.toLowerCase())}`}
+                className="text-white/90 hover:text-white transition-colors text-sm font-medium"
+              >
+                {category}
+              </Link>
+            ))}
+          </nav>
         </div>
 
-        {/* Mobile Menu */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-80">
-            <div className="flex flex-col space-y-4 mt-6">
-              <form onSubmit={handleSearch} className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  placeholder="Search products..."
-                  className="pl-10"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </form>
-              <nav className="flex flex-col space-y-2">
-                {categories.map((category) => (
-                  <Link
-                    key={category}
-                    href={`/category/${category.toLowerCase()}`}
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {category}
-                  </Link>
-                ))}
-              </nav>
-              <div className="flex space-x-2 pt-4">
-                <Button variant="outline" className="flex-1 bg-transparent">
-                  <User className="h-4 w-4 mr-2" />
-                  Account
-                </Button>
-              </div>
+        {/* Search and User */}
+        <div className="flex items-center space-x-4">
+          {/* Desktop Search */}
+          <form onSubmit={handleSearch} className="hidden md:block w-64">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/70" />
+              <Input
+                placeholder="Search products..."
+                className="pl-10 bg-white/90 focus-visible:ring-2 focus-visible:ring-primary/50 rounded-full"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
-          </SheetContent>
-        </Sheet>
+          </form>
+
+          {/* User Account */}
+         
+
+          {/* Mobile Menu Button */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            
+            {/* Mobile Menu Content */}
+            <SheetContent side="right" className="w-80 bg-white p-0">
+              <div className="h-full flex flex-col">
+                <SheetHeader className="border-b p-4">
+                  <SheetTitle className="text-primary">Menu</SheetTitle>
+                </SheetHeader>
+                
+                <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                  {/* Mobile Search */}
+                  <form onSubmit={handleSearch} className="relative">
+                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                    <Input
+                      placeholder="Search products..."
+                      className="pl-10 w-full"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </form>
+                  
+                  {/* Mobile Navigation */}
+                  <nav className="space-y-1">
+                    {categories.map((category) => (
+                      <Link
+                        key={category}
+                        href={`/search?category=${encodeURIComponent(category.toLowerCase())}`}
+                        className="block px-4 py-3 rounded-md hover:bg-primary/10 text-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {category}
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+                
+                {/* Footer with Sign In */}
+                
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   )

@@ -4,6 +4,7 @@ import { CategoryFilters } from "@/components/category-filters"
 import { CategoryHeader } from "@/components/category-header"
 import { notFound } from "next/navigation"
 import { allProducts, getProductsByCategory } from "@/lib/products"
+import Footer from "@/components/footer"
 
 const categoryInfo = {
   men: {
@@ -89,17 +90,18 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   )
 }
 
 export function generateStaticParams() {
   return [
-    { slug: "men" },
-    { slug: "women" },
-    { slug: "kids" },
-    { slug: "shoes" },
-    { slug: "accessories" },
-    { slug: "sale" },
+    { slug: "tshirts" },
+    { slug: "lowers" },
+    { slug: "caps" },
+    { slug: "whites" },
+    { slug: "full-sleves" },
+    { slug: "tracksuits" },
   ]
 }

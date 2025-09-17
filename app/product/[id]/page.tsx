@@ -5,6 +5,7 @@ import { ProductTabs } from "@/components/product-tabs"
 import { RelatedProducts } from "@/components/related-products"
 import { notFound } from "next/navigation"
 import { allProducts, getProductById } from "@/lib/products"
+import Footer from "@/components/footer"
 
 interface ProductPageProps {
   params: {
@@ -41,6 +42,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         {/* Related Products */}
         {relatedProducts.length > 0 && <RelatedProducts products={relatedProducts} />}
       </main>
+      <Footer/>
     </div>
   )
 }
