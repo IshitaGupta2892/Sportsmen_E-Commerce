@@ -4,34 +4,34 @@ import Link from "next/link"
 export function CategoryGrid() {
   const categories = [
     {
-      name: "Men's Wear",
+      name: "T-Shirts",
       image: "/mens-athletic-sportswear-clothing.png",
-      href: "/category/men",
+      href: "/search?q=tshirt",
     },
     {
-      name: "Women's Wear",
+      name: "Lowers",
       image: "/womens-athletic-sportswear-clothing.png",
-      href: "/category/women",
+      href: "/search?q=lowers",
     },
     {
-      name: "Athletic Shoes",
-      image: "/athletic-running-shoes-sneakers.png",
-      href: "/category/shoes",
-    },
-    {
-      name: "Kids Collection",
-      image: "/kids-children-athletic-sportswear.png",
-      href: "/category/kids",
-    },
-    {
-      name: "Accessories",
+      name: "Caps",
       image: "/sports-accessories-bags-water-bottles.png",
-      href: "/category/accessories",
+      href: "/search?q=cap",
     },
     {
-      name: "Sale Items",
+      name: "Shorts",
+      image: "/athletic-running-shoes-sneakers.png",
+      href: "/search?q=shorts",
+    },
+    {
+      name: "Full Sleeves",
       image: "/discounted-athletic-wear-sale-items.png",
-      href: "/category/sale",
+      href: "/search?q=full%20sleeve",
+    },
+    {
+      name: "Tracksuits",
+      image: "/athletic-runner-in-motion-on-track-dynamic-action-.png",
+      href: "/search?q=tracksuit",
     },
   ]
 
@@ -39,9 +39,9 @@ export function CategoryGrid() {
     <section className="py-16 px-4 bg-muted/30">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-balance">Shop by Category</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-balance">Shop Cricket Sportswear</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
-            Find exactly what you need for your sport and lifestyle
+            Explore premium cricket apparel—built for comfort, performance, and style
           </p>
         </div>
 
